@@ -7,9 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import DAO.EntidadeBase;
+
 @Entity
 @Table(name="tipo")
-public class TipoPizzaModel {
+public class TipoPizzaModel implements EntidadeBase{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

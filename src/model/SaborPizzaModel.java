@@ -12,9 +12,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import DAO.EntidadeBase;
+
 @Entity
 @Table(name="sabor_pizza")
-public class SaborPizzaModel {
+public class SaborPizzaModel implements EntidadeBase {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +31,9 @@ public class SaborPizzaModel {
 	
 	@Column
 	private double valorAdicional;
+	
+	@Column
+	private String foto;
 	
 	@OneToMany(mappedBy = "saborPizza")
 	private List<SaborPizzaIngredienteModel> listaIngredientes;
@@ -72,6 +77,14 @@ public class SaborPizzaModel {
 
 	public void setListaIngredientes(List<SaborPizzaIngredienteModel> listaIngredientes) {
 		this.listaIngredientes = listaIngredientes;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 	
 }

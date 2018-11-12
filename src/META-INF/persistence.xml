@@ -9,6 +9,14 @@
 
 		<!-- Todas as classes de entidades precisam ser listadas aqui -->
 		<class>model.FuncionarioModel</class>
+		<class>model.BordaModel</class>
+		<class>model.IngredienteModel</class>
+		<class>model.BordaIngredienteModel</class>
+		<class>model.TipoPizzaModel</class>
+		<class>model.SaborPizzaModel</class>
+		<class>model.SaborPizzaIngredienteModel</class>
+		
+		
 
 		<properties>
 			<!-- CONFIGURAÇÕES DE CONEXÃO COM O BANCO DE DADOS -->

@@ -10,9 +10,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import DAO.EntidadeBase;
+
 @Entity
 @Table(name="borda")
-public class BordaModel {
+public class BordaModel implements EntidadeBase {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

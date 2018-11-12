@@ -7,7 +7,7 @@ import javax.persistence.Query;
 import model.TipoPizzaModel;
 
 @SuppressWarnings("rawtypes")
-public class TipoPizzaDAO extends DAO {
+public class TipoPizzaDAO extends DAO<TipoPizzaModel> {
 	
 	@SuppressWarnings("unchecked")
 	public List<TipoPizzaModel> listPaginado(int pagina, int limitePorPagina){

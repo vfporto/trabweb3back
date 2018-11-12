@@ -9,9 +9,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import DAO.EntidadeBase;
+
 @Entity
 @Table(name="pizza_ingrediente")
-public class SaborPizzaIngredienteModel {
+public class SaborPizzaIngredienteModel implements EntidadeBase {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
