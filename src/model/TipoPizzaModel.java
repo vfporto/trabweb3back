@@ -18,7 +18,7 @@ public class TipoPizzaModel implements EntidadeBase{
 	private long id;
 	
 	@Column
-	private long nome;
+	private String nome;
 	
 	@Column
 	private double valorAdicional;
@@ -31,10 +31,11 @@ public class TipoPizzaModel implements EntidadeBase{
 	public void setId(long id) {
 		this.id = id;
 	}
-	public long getNome() {
+	
+	public String getNome() {
 		return nome;
 	}
-	public void setNome(long nome) {
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	public double getValorAdicional() {

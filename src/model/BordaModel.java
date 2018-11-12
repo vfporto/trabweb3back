@@ -13,23 +13,23 @@ import javax.persistence.Table;
 import DAO.EntidadeBase;
 
 @Entity
-@Table(name="borda")
+@Table(name = "borda")
 public class BordaModel implements EntidadeBase {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	@Column
-	private long nome;
-	
+	private String nome;
+
 	@Column
 	private double valorAdicional;
 
 	public long getId() {
 		return id;
 	}
-	
+
 	@OneToMany(mappedBy = "borda")
 	private List<BordaIngredienteModel> listaIngredientes;
 
@@ -37,11 +37,11 @@ public class BordaModel implements EntidadeBase {
 		this.id = id;
 	}
 
-	public long getNome() {
+	public String getNome() {
 		return nome;
 	}
 
-	public void setNome(long nome) {
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
@@ -61,5 +61,4 @@ public class BordaModel implements EntidadeBase {
 		this.listaIngredientes = listaIngredientes;
 	}
 
-	
 }

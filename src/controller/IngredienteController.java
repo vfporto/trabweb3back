@@ -23,8 +23,7 @@ public class IngredienteController {
 	@GET
 	@Path("listar")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<IngredienteModel> listar(@QueryParam("pagina") int pagina,
-			@QueryParam("limitePorPagina") int limitePorPagina) {
+	public List<IngredienteModel> listar(@QueryParam("pagina") int pagina, @QueryParam("limitePorPagina") int limitePorPagina) {
 		List<IngredienteModel> lista = dao.listPaginado(pagina, limitePorPagina);
 		return lista;
 	}
