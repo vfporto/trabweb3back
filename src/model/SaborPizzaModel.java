@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import DAO.EntidadeBase;
 
 @Entity
@@ -35,6 +37,7 @@ public class SaborPizzaModel implements EntidadeBase {
 	@Column
 	private String foto;
 	
+	@JsonIgnoreProperties("saborPizza")
 	@OneToMany(mappedBy = "saborPizza")
 	private List<SaborPizzaIngredienteModel> listaIngredientes;
 	

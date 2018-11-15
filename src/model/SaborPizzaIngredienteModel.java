@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import DAO.EntidadeBase;
 
 @Entity
@@ -23,6 +25,7 @@ public class SaborPizzaIngredienteModel implements EntidadeBase {
 	@JoinColumn(name="sabor_pizza_id", nullable=false)
 	private SaborPizzaModel saborPizza;
 	
+	@JsonIgnoreProperties("listaIngredientes")
 	@ManyToOne
 	@JoinColumn(name="ingrediente_id", nullable=false)
 	private IngredienteModel ingrediente;
