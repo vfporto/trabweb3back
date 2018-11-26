@@ -46,7 +46,7 @@ public class IngredienteController {
 	@Path("buscar")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public IngredienteModel buscarPorId(@QueryParam("id") long id) {
-		return (IngredienteModel) dao.findById(TipoPizzaModel.class, id);
+		return (IngredienteModel) dao.findById(IngredienteModel.class, id);
 	}
 
 	@DELETE
