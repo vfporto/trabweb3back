@@ -32,6 +32,9 @@ public class SaborPizzaModel implements EntidadeBase {
 	private String nome;
 	
 	@Column
+	private String descricao;
+	
+	@Column
 	private double valorAdicional;
 	
 	@Column
@@ -64,6 +67,14 @@ public class SaborPizzaModel implements EntidadeBase {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public double getValorAdicional() {

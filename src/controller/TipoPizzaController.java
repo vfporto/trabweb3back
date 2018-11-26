@@ -26,6 +26,14 @@ public class TipoPizzaController {
 		List<TipoPizzaModel> lista = dao.listPaginado(pagina,limitePorPagina);
 		return lista;
 	}
+	
+	@GET 
+	@Path("listarTudo")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<TipoPizzaModel> listarTudo() {
+		List<TipoPizzaModel> lista = dao.listaAll(TipoPizzaModel.class);
+		return lista;
+	}
 
 	@POST
 	@Path("salvar")

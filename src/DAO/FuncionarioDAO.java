@@ -7,7 +7,8 @@ import javax.persistence.Query;
 import model.FuncionarioModel;
 
 
-public class FuncionarioDAO extends DAO<FuncionarioModel>{
+@SuppressWarnings("rawtypes")
+public class FuncionarioDAO extends DAO{
 	
 	
 	@SuppressWarnings("unchecked")

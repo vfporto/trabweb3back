@@ -18,8 +18,8 @@ public class Utilitarios {
 			e.printStackTrace();
 		}
 		String pathArr[] = fullPath.split("/WEB-INF/classes/");
-		System.out.println(fullPath);
-		System.out.println(pathArr[0]);
+		System.out.println("fullPath: "+fullPath);
+		System.out.println("pathArr[0]: "+pathArr[0]);
 		fullPath = pathArr[0];
 		return fullPath;
 	}
@@ -29,7 +29,7 @@ public class Utilitarios {
 
 	    try {
 	    	caminho = caminho.replaceAll("file:/","");
-	    	System.out.println(caminho);
+	    	System.out.println("caminho: "+caminho);
 	    	
 	        OutputStream out = null;
 	        int read = 0;
