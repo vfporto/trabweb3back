@@ -21,11 +21,11 @@ public class SaborPizzaIngredienteModel implements EntidadeBase {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
+	@JsonIgnoreProperties("listaIngredientes")
 	@ManyToOne
 	@JoinColumn(name="sabor_pizza_id", nullable=false)
 	private SaborPizzaModel saborPizza;
 	
-	@JsonIgnoreProperties("listaIngredientes")
 	@ManyToOne
 	@JoinColumn(name="ingrediente_id", nullable=false)
 	private IngredienteModel ingrediente;

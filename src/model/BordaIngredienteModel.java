@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import DAO.EntidadeBase;
 
 @Entity
@@ -19,9 +21,11 @@ public class BordaIngredienteModel implements EntidadeBase {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
+	@JsonIgnoreProperties("listaIngredientes")
 	@ManyToOne
 	@JoinColumn(name="borda_id", nullable=false)
 	private BordaModel borda;
+	
 	
 	@ManyToOne
 	@JoinColumn(name="ingrediente_id", nullable=false)

@@ -13,6 +13,8 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import DAO.BordaDAO;
+import DAO.DAO;
+import model.BordaIngredienteModel;
 import model.BordaModel;
 
 @Path("borda")
@@ -34,6 +36,15 @@ public class BordaController {
 		dao.save(borda);
 	}
 
+	/*@POST
+	@Path("inserirIngrediente")
+	public void inserirIngrediente(@QueryParam("idBorda") long idBorda, @QueryParam("idIngrediente") long idIngrediente, @QueryParam("quantidade") double quantidade) {
+		DAO<BordaIngredienteModel> daoBI = new DAO<>();
+		BordaIngredienteModel bi = daoBI.findById(BordaIngredienteModel.class, id)
+				
+		
+	}*/
+	
 	@PUT
 	@Path("alterar")
 	@Consumes(MediaType.APPLICATION_JSON)

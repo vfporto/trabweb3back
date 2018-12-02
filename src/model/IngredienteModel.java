@@ -33,7 +33,16 @@ public class IngredienteModel implements EntidadeBase{
 	private String unidadeMedida;
 	
 	
+	public IngredienteModel() {
+		
+	}
+	
+	public IngredienteModel(long id) {
+		super();
+		this.id = id;
+	}
 
+	//Getters and Setters1
 	public long getId() {
 		return id;
 	}
