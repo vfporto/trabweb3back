@@ -14,6 +14,7 @@ import javax.ws.rs.core.MediaType;
 
 import DAO.IngredienteDAO;
 import model.IngredienteModel;
+import model.TipoPizzaModel;
 
 @Path("ingrediente")
 public class IngredienteController {
@@ -24,6 +25,14 @@ public class IngredienteController {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<IngredienteModel> listar(@QueryParam("pagina") int pagina, @QueryParam("limitePorPagina") int limitePorPagina) {
 		List<IngredienteModel> lista = dao.listPaginado(pagina, limitePorPagina);
+		return lista;
+	}
+	
+	@GET
+	@Path("listarTudo")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<IngredienteModel> listarTudo() {
+		List<IngredienteModel> lista = dao.listaAll(IngredienteModel.class);
 		return lista;
 	}
 
