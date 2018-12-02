@@ -14,7 +14,6 @@ import javax.ws.rs.core.MediaType;
 
 import DAO.IngredienteDAO;
 import model.IngredienteModel;
-import model.TipoPizzaModel;
 
 @Path("ingrediente")
 public class IngredienteController {
@@ -46,7 +45,7 @@ public class IngredienteController {
 	@Path("buscar")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public IngredienteModel buscarPorId(@QueryParam("id") long id) {
-		return (IngredienteModel) dao.findById(TipoPizzaModel.class, id);
+		return (IngredienteModel) dao.findById(IngredienteModel.class, id);
 	}
 
 	@DELETE

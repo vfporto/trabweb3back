@@ -1,5 +1,6 @@
 package model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,6 +26,9 @@ public class BordaIngredienteModel implements EntidadeBase {
 	@ManyToOne
 	@JoinColumn(name="ingrediente_id", nullable=false)
 	private IngredienteModel ingrediente;
+	
+	@Column
+	private double quantidade;
 
 	public long getId() {
 		return id;
@@ -48,6 +52,14 @@ public class BordaIngredienteModel implements EntidadeBase {
 
 	public void setIngrediente(IngredienteModel ingrediente) {
 		this.ingrediente = ingrediente;
+	}
+
+	public double getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(double quantidade) {
+		this.quantidade = quantidade;
 	}
 	
 	

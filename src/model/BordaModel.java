@@ -33,6 +33,33 @@ public class BordaModel implements EntidadeBase {
 	@OneToMany(mappedBy = "borda")
 	private List<BordaIngredienteModel> listaIngredientes;
 
+	
+	
+	public BordaModel() {
+		super();
+	}
+	
+	public BordaModel(long id) {
+		super();
+		this.id = id;
+	}
+
+	public BordaModel(long id, String nome, double valorAdicional, List<BordaIngredienteModel> listaIngredientes) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.valorAdicional = valorAdicional;
+		this.listaIngredientes = listaIngredientes;
+	}
+	
+	public BordaModel(String nome, double valorAdicional, List<BordaIngredienteModel> listaIngredientes) {
+		super();
+		this.nome = nome;
+		this.valorAdicional = valorAdicional;
+		this.listaIngredientes = listaIngredientes;
+	}
+
+	//Getters and Setters
 	public void setId(long id) {
 		this.id = id;
 	}

@@ -1,17 +1,36 @@
 package model;
 
-public class TamanhoModel {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import DAO.EntidadeBase;
+
+@Entity
+@Table(name="tamanho")
+public class TamanhoPizzaModel implements EntidadeBase {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	
+	@Column
 	private String nome;
+	
+	@Column
 	private String descricao;
+	
+	@Column
 	private int numMaximoSabores;
+	
+	@Column
 	private double preco;
+	
+	@Column
 	private double fatorMultiplicacao; //Qtas vezes essa pizza eh maior que a pequena (usada como referencia para calculo de ingredientes)
-	
-	
-	
-	
 	
 	
 	public long getId() {
