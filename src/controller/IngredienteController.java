@@ -32,7 +32,7 @@ public class IngredienteController {
 	@Path("listarTudo")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<IngredienteModel> listarTudo() {
-		List<IngredienteModel> lista = dao.listaAll(IngredienteModel.class);
+		List<IngredienteModel> lista = dao.listaTudoOrdenado();
 		return lista;
 	}
 

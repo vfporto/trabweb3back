@@ -17,5 +17,11 @@ public class IngredienteDAO extends DAO {
 		query.setFirstResult(pagina*limitePorPagina-limitePorPagina);
 		return query.getResultList();
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<IngredienteModel> listaTudoOrdenado(){
+		manager.clear(); //limpeza de cache de queries
+		return manager.createQuery("Select i from IngredienteModel i order by i.nome").getResultList();
+	}
 
 }
