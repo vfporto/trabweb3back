@@ -43,7 +43,7 @@ public class SaborPizzaModel implements EntidadeBase {
 	private String foto;
 	
 	@JsonIgnoreProperties("saborPizza")
-	@OneToMany(mappedBy = "saborPizza", fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@OneToMany(mappedBy = "saborPizza", fetch=FetchType.EAGER, cascade=CascadeType.ALL, orphanRemoval=true)
 	private List<SaborPizzaIngredienteModel> listaIngredientes;
 	
 

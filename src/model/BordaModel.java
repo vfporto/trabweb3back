@@ -35,7 +35,7 @@ public class BordaModel implements EntidadeBase {
 	}
 
 	@JsonIgnoreProperties("borda")
-	@OneToMany(mappedBy = "borda", fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@OneToMany(mappedBy = "borda", fetch=FetchType.EAGER, cascade=CascadeType.ALL, orphanRemoval=true)
 	private List<BordaIngredienteModel> listaIngredientes;
 
 	
