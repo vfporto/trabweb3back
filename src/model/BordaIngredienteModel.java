@@ -11,7 +11,6 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import DAO.EntidadeBase;
 
@@ -32,7 +31,7 @@ public class BordaIngredienteModel implements EntidadeBase {
 	
 	@ManyToOne
 	@JoinColumn(name="ingrediente_id", nullable=false)
-	@JsonBackReference
+	//JsonBackReference
 	private IngredienteModel ingrediente;
 	
 	@Column
