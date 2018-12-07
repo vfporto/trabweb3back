@@ -32,8 +32,10 @@ public class BordaController {
 	@POST
 	@Path("salvar")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public void salvar(BordaModel borda) {
+	@Produces(MediaType.APPLICATION_JSON)
+	public BordaModel salvar(BordaModel borda) {
 		dao.save(borda);
+		return borda;
 	}
 
 	/*@POST

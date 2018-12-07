@@ -12,12 +12,16 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import DAO.EntidadeBase;
 
 @Entity
 @Table(name = "borda")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "id")
 public class BordaModel implements EntidadeBase {
 
 	@Id
@@ -36,6 +40,7 @@ public class BordaModel implements EntidadeBase {
 
 	@JsonIgnoreProperties("borda")
 	@OneToMany(mappedBy = "borda", fetch=FetchType.EAGER, cascade=CascadeType.ALL, orphanRemoval=true)
+	@JsonManagedReference
 	private List<BordaIngredienteModel> listaIngredientes;
 
 	

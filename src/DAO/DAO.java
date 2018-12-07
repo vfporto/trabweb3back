@@ -21,26 +21,31 @@ public class DAO<T extends EntidadeBase> {
 		return manager.createQuery("Select t from " + clazz.getSimpleName() + " t").getResultList();
 	}
 	
-	public void save(T obj){
+	public T save(T obj){
 		try{
 			manager.clear(); //limpeza de cache de queries			
 			manager.getTransaction().begin();
 			manager.persist(obj);
 			manager.getTransaction().commit();
+			return obj;
+			
 		}catch(Exception e){
 			manager.getTransaction().rollback();
 		}
+		return null;
 	}
 	
-	public void update(T obj){
+	public T update(T obj){
 		try{
 			manager.clear(); //limpeza de cache de queries			
 			manager.getTransaction().begin();
 			manager.merge(obj);
 			manager.getTransaction().commit();
+			return obj;
 		}catch(Exception e){
 			manager.getTransaction().rollback();
 		}
+		return null;
 	}
 
 	public void delete(Class<T> clazz, Long id){
